@@ -1,0 +1,87 @@
+import re
+
+sample = "student turns 16,&quot; Dr. Delma Blinson, superintendent of the city schools remarked. &quot;But the problem basically goes back"
+sample2 = "student turns 16,&quot; Dr. Delma Blinson, &nbsp;superintendent of the city schools remarked. ^^ &nbsp;But the problem basically goes back"
+sample3 = """mmm-
+
+mm
+
+*CLOUDY
+
+Cloudy Sunday with highs in the 60s. Lows Sunday In the 40s. Cloudy Monday with change of rain.WRINKLED
+
+Wrinkled Chinese dogs are treasured by local owner. Carol Tyer has story and pictures. Page C-1.ECU WINS OPENER
+
+East Carolina cruised to a 75*66 victory over Campbell University, in the 1983*84 opener for Both schools. (Page B-1)
+
+Today's
+
+Reading
+
+Abby
+
+Enterinent
+
+THE DAILY REFLECTOR
+
+102NDYEAR NO. 265
+
+GREENVILLE, N.C.
+
+TRUTH IN PREFERENCE TO FICTION SUNDAY MORNING. NOVEMBER 27.1983
+
+176 PAGES 12 SECTIONS
+
+PRICE 50 CENTSSome Say American Dream Ended With Shooting Of Pres. Kennedy
+
+NOT FOR THE BIRDS - A modified Jetstream piloted by astronauts makes practice landings and the Kennedy Space Center Saturday morning as a flight of birds pass by. The
+
+astronauts are making the landings in preparation for .Mondays scheduled launching of Space Shuttle flight nine. .See story on page 14-B. (AP Laserphoto)
+
+Factors Behind School Dropouts Have Roots In Earlier Years
+
+By JERRY RAY.NOR Reflector Staff Writer
+
+School adrainiitrators in the Pitt County and Greenville City Schools agree on the basic premise that factors behind dropouts from school are not generally ones that result in a students sudden decision to quit school, but often have their roots in earBer school years.
+
+A recent report compiled by the N. C. Department of Public Instruction reveals that the dropout rate for school year 1982-83 was 5.2 percent for the Greenville City Schools, and 7.2 percent for the Pitt County Schools.
+
+&quot;In general, most dropouts occur in the tenth grade, after a
+
+student turns 16,&quot; Dr. Delma Blinson, superintendent of the city schools remarked. &quot;But the problem basically goes back
+
+much farther. Often we can ^ientify a potential dropout as early as the second, third and fourth grades. Young students who have trouble with their studies,who fall behind in their work, lose interest, become defiant and are disciplinary problems, are likely to be eventual dropout candidates.
+
+usually end up graduating,&quot; Blinson added. I feel that for reliable indications of dropouts in high school, its good to take a look at students who are 10 to 12 years old. Much
+
+depends on the question of how much communication takes place between a child and parents about school. If the answer IS virtually zero, the student is a potential drop out.
+
+Blinson feels one of the most effective dropout prevention approaches &quot;is finding a way for a student to study to be successful in his school work, to learn to read and write effectively. Young student who can do this are more likely to feel good about being in school. When this happens, a student can face problems with confidence.&quot;
+
+
+&quot;There are no gimoicks to prevent dropout,&quot; Blinstm remarked. I feel strongly that the two most important elements to dropout prevention is that a student early learns to read, write, and compute, and to have teachers who really care. These two factors are the bottom line. &quot;
+
+John McKnight, assistant superintendent for instruction in the Pitt County Schools, said &quot;the droput rates as a whole have to be lo^ed at statistically in grades nine through twelve. One phenomena that is happening in the schools is that we are holding students longer. Some under-achievers in the past dropped out earlier and were not reflected in statistics, whereas now with students staying in school longer, it has reached the point where statistics do reflect them, and that makes a difference in reports on the subject.&quot;"""
+output = sample
+output2 = sample2
+output3 = sample3
+#pattern = "&quot;"
+#replace = '"'
+#output = re.sub(pattern, replace, sample)
+#print(output)
+
+patterns = ["&quot;", "&nbsp;"]
+replaces = ['"', " "]
+replaces_counter = 0
+
+for pat in patterns:    
+    print(pat)
+    print(replaces_counter)
+    if pat in output3:
+        output3 = re.sub(pat, replaces[replaces_counter], output3)
+    replaces_counter += 1
+    
+# having trouble with removing carets via regex despite using escape chars. workaround.
+output3 = output3.replace("^", "")
+    
+print(output3)
