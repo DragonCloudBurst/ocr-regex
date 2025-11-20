@@ -24,7 +24,10 @@ def regExRun(filename: str):
         replaces_counter += 1
         
     # having trouble with removing carets via regex despite using escape chars. workaround.
+    
     output_text = output_text.replace("^", "")
+    print(output_text)
+    output_text = output_text.replace("\\", "")
 
     output_file.write(output_text)
 
