@@ -5,7 +5,7 @@ app = typer.Typer()
 
 @app.command()
 def regExRun(filename: str):
-    input_text = open(f"files/{filename}", "r")
+    input_text = open(f"{filename}", "r")
     output_text = input_text.read()
     output_file = open(f"files/output_{filename[:-4]}.txt", "w")
 
