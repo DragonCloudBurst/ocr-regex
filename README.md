@@ -14,3 +14,8 @@ for special characters- `&quot;`, `&nbsp;`, `&gt;`, `&lt;`, and `&amp;`- are rep
 - Simply clone the respository via git. No installation is needed.
 
 ## Use of Script
+
+- Place the txt file of text that you want to clean up in the `files` directory.
+- Call the script from the command line as follows (Note that the exact command to call Python may vary depending on your OS / distribution / etc. (python vs python3)): `python ocrRegex.py "files/path to your text file.txt"`
+- If there are no spaces in the filename, you may omit the quotation marks. As follows: `python ocrRegex.py files/path_to_your_text_file.txt`
+- The output file will be named `output_<initial file name>.txt` and will automatically be placed within the files directory. For example, if your file was named `document1.txt1`, the new file wil be named `output_document1.txt`.
