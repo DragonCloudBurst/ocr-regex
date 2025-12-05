@@ -11,7 +11,7 @@ for special characters- `&quot;`, `&nbsp;`, `&gt;`, `&lt;`, and `&amp;`- are rep
 
 ## Installation / Download
 
-- Simply clone the respository via git. No installation is needed.
+- Simply clone the respository via git. No installation is needed. 
 
 ## Use of Script
 
@@ -19,3 +19,7 @@ for special characters- `&quot;`, `&nbsp;`, `&gt;`, `&lt;`, and `&amp;`- are rep
 - Call the script from the command line as follows (Note that the exact command to call Python may vary depending on your OS / distribution / etc. (python vs python3)): `python ocrRegex.py "files/path to your text file.txt"`
 - If there are no spaces in the filename, you may omit the quotation marks. As follows: `python ocrRegex.py files/path_to_your_text_file.txt`
 - The output file will be named `output_<initial file name>.txt` and will automatically be placed within the files directory. For example, if your file was named `document1.txt1`, the new file wil be named `output_document1.txt`.
+
+## Output Examples
+
+- Plenty of program output examples can be seen under the `files` directory. These can be deleted after cloning the repository if you desire. One of the best "before and after" examples is [example8.txt](https://github.com/DragonCloudBurst/ocr-regex/blob/main/files/example8.txt) and [output_example8.txt](https://github.com/DragonCloudBurst/ocr-regex/blob/main/files/output_example8.txt). All examples are taken from real OCR text.
