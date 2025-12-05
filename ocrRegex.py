@@ -7,13 +7,12 @@ app = typer.Typer()
 def regExRun(filename: str):
     input_text = open(f"{filename}", "r")
     output_text = input_text.read()
-    output_file = open(f"files/output_{filename[:-4]}.txt", "w")
+    
+    filename_noext = filename[:-4]
+    filetitle = filename_noext[6:]
+        
+    output_file = open(f"files/output_{filetitle}.txt", "w")
 
-    # ask joe: should a backslash ever be in text?
-
-    # trying to figure out how to remove a space then punctuation. for example if its
-    # hi .i am
-    # then it should remove " ." 
     patterns = ["[ \s][:\|.?/]", "&quot;", "&nbsp;", "&gt;", "&lt;", "&amp;", "~", "�?", "�", "\|", "[ \s][?]"]
     replaces = [" ", '"', " ", "", "", "&", " ", "", "", " ", " "]
     replaces_counter = 0
@@ -26,7 +25,6 @@ def regExRun(filename: str):
     # having trouble with removing carets via regex despite using escape chars. workaround.
     
     output_text = output_text.replace("^", "")
-    print(output_text)
     output_text = output_text.replace("\\", "")
 
     output_file.write(output_text)
