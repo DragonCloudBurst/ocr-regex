@@ -6,7 +6,7 @@ for special characters- `&quot;`, `&nbsp;`, and `&amp;`- are replaced with the a
 ## Dependencies
 
 - Python 3.6 or higher
-- Typer (can be easily installed with pip install typer)
+- Typer (can be easily installed with `pip install typer`)
 - A plaintext file of text to be processed
 
 ## Installation / Download
